@@ -22,11 +22,11 @@ let questions = [
     "answer": 1
   },
   {
-    "question": "What is the correct syntax for referring to an external script called 'xxx.js'?",
-    "choice1": "<script href='xxx.js'>",
-    "choice2": "<script name='xxx.js'>",
-    "choice3": "<script src='xxx.js'>",
-    "choice4": "<script file='xxx.js'>",
+    "question": "What's The Full Meaning Of NCDC?",
+    "choice1": "Notorious Control Diorder Center",
+    "choice2": "Nipro Century Deliver Ceb",
+    "choice3": "National Center For Disease Control",
+    "choice4": "None Of The Above",
     "answer": 3
   },
   {
@@ -95,25 +95,6 @@ startGame = () => {
   
 };
   function choiceAuthA() {
-    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-      const selectedChoice = choices[0];
-      const selectedAnswer = selectedChoice.dataset['number'];
-      const classToApply =
-      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-      if (classToApply == "correct") {
-        incrementScore(CORRECT_BONUS);
-        // document.getElementById("p1").style = "background-color: #28a745";
-        // document.getElementById("p1").classList.add("dclass")
-      }
-      //go to the end page
-      document.getElementById("game").style.display = "none"
-      document.getElementById("ResultDisplay").style.display = "flex"
-      document.getElementById("ResultDisplay").innerHTML = "You Scored <br>" + score
-    } else {
-    if (!acceptingAnswers) return;
-    acceptingAnswers = false;
-
-    document.getElementById("nextbtn").style.display = "block"
     if (currentQuestion.answer == 1) {
       document.getElementById("p1").style = "background-color:#28a745";
       document.getElementById("p1").classList.add("dclass");
@@ -127,7 +108,8 @@ startGame = () => {
       document.getElementById("p4").style = "background-color:#28a745";
       document.getElementById("p4").classList.add("dclass");
     };
-
+    if (!acceptingAnswers) return;
+    acceptingAnswers = false;
     const selectedChoice = choices[0];
     const selectedAnswer = selectedChoice.dataset['number'];
     const classToApply =
@@ -141,27 +123,27 @@ startGame = () => {
       document.getElementById("p1").style = "background-color: red";
       document.getElementById("p1").classList.add("dclass")
     }
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+      if (!acceptingAnswers) return;
+    acceptingAnswers = false;
+
+      //go to the end page
+      setTimeout(() => {
+        document.getElementById("game").style.display = "none"
+        document.getElementById("ResultDisplay").style.display = "flex"
+        document.getElementById("ResultDisplay").innerHTML = "You Scored <br>" + score
+        
+      }, 1000);
+      
+    } else {
+    if (!acceptingAnswers) return;
+    acceptingAnswers = false;
+
+    document.getElementById("nextbtn").style.display = "block"
+    
   }
   };
   function choiceAuthB() {
-    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-      const selectedChoice = choices[1];
-      const selectedAnswer = selectedChoice.dataset['number'];
-      const classToApply =
-      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-      if (classToApply == "correct") {
-        incrementScore(CORRECT_BONUS);
-        // document.getElementById("p1").style = "background-color: #28a745";
-        // document.getElementById("p1").classList.add("dclass")
-      }
-      //go to the end page
-      document.getElementById("game").style.display = "none";
-      document.getElementById("ResultDisplay").style.display = "flex";
-      document.getElementById("ResultDisplay").innerHTML = "You Scored <br>" + score;
-    } else {
-    document.getElementById("nextbtn").style.display = "block";
-
-
     if (currentQuestion.answer == 1) {
       document.getElementById("p1").style = "background-color:#28a745";
       document.getElementById("p1").classList.add("dclass");
@@ -192,25 +174,21 @@ startGame = () => {
       document.getElementById("p2").style = "background-color: red";
       document.getElementById("p2").classList.add("dclass")
     }
+    if (availableQuestions.length == 0 || questionCounter >= MAX_QUESTIONS) {
+      //go to the end page
+      setTimeout(() => {
+        document.getElementById("game").style.display = "none";
+      document.getElementById("ResultDisplay").style.display = "flex";
+      document.getElementById("ResultDisplay").innerHTML = "You Scored <br>" + score;
+      }, 1000);
+    } else {
+    document.getElementById("nextbtn").style.display = "block";
+
+
+    
   }
   };
   function choiceAuthC() {
-    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-      const selectedChoice = choices[2];
-      const selectedAnswer = selectedChoice.dataset['number'];
-      const classToApply =
-      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-      if (classToApply == "correct") {
-        incrementScore(CORRECT_BONUS);
-        // document.getElementById("p1").style = "background-color: #28a745";
-        // document.getElementById("p1").classList.add("dclass")
-      }
-      //go to the end page
-      document.getElementById("game").style.display = "none";
-      document.getElementById("ResultDisplay").style.display = "flex";
-      document.getElementById("ResultDisplay").innerHTML = "You Scored <br>" + score;
-    } else {
-    document.getElementById("nextbtn").style.display = "block";
     if (currentQuestion.answer == 1) {
       document.getElementById("p1").style = "background-color:#28a745";
       document.getElementById("p1").classList.add("dclass");
@@ -239,25 +217,19 @@ startGame = () => {
     document.getElementById("p3").style = "background-color: red";
     document.getElementById("p3").classList.add("dclass")
   }
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+      //go to the end page
+      setTimeout(() => {
+        document.getElementById("game").style.display = "none";
+        document.getElementById("ResultDisplay").style.display = "flex";
+        document.getElementById("ResultDisplay").innerHTML = "You Scored <br>" + score;
+      }, 1000);
+    } else {
+    document.getElementById("nextbtn").style.display = "block";
+    
 }
   };
   function choiceAuthD() {
-    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-      const selectedChoice = choices[3];
-      const selectedAnswer = selectedChoice.dataset['number'];
-      const classToApply =
-      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-      if (classToApply == "correct") {
-        incrementScore(CORRECT_BONUS);
-        // document.getElementById("p1").style = "background-color: #28a745";
-        // document.getElementById("p1").classList.add("dclass")
-      }
-      //go to the end page
-      document.getElementById("game").style.display = "none";
-      document.getElementById("ResultDisplay").style.display = "flex";
-      document.getElementById("ResultDisplay").innerHTML = "You Scored <br>" + score;
-    } else {
-    document.getElementById("nextbtn").style.display = "block";
     if (currentQuestion.answer == 1) {
       document.getElementById("p1").style = "background-color:#28a745";
       document.getElementById("p1").classList.add("dclass");
@@ -285,6 +257,17 @@ startGame = () => {
       document.getElementById("p4").style = "background-color: red";
       document.getElementById("p4").classList.add("dclass")
     }
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+     
+      //go to the end page
+      setTimeout(() => {
+        document.getElementById("game").style.display = "none";
+        document.getElementById("ResultDisplay").style.display = "flex";
+        document.getElementById("ResultDisplay").innerHTML = "You Scored <br>" + score;
+      }, 1000);
+    } else {
+    document.getElementById("nextbtn").style.display = "block";
+    
   }
   };
 incrementScore = num => {
