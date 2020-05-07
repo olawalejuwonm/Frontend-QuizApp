@@ -125,7 +125,7 @@ startGame = () => {
     }
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
       if (!acceptingAnswers) return;
-    acceptingAnswers = false;
+      acceptingAnswers = false;
 
       //go to the end page
       setTimeout(() => {
@@ -136,8 +136,8 @@ startGame = () => {
       }, 1000);
       
     } else {
-    if (!acceptingAnswers) return;
-    acceptingAnswers = false;
+    // if (!acceptingAnswers) return;
+    // acceptingAnswers = false;
 
     document.getElementById("nextbtn").style.display = "block"
     
@@ -182,10 +182,7 @@ startGame = () => {
       document.getElementById("ResultDisplay").innerHTML = "You Scored <br>" + score;
       }, 1000);
     } else {
-    document.getElementById("nextbtn").style.display = "block";
-
-
-    
+      document.getElementById("nextbtn").style.display = "block";
   }
   };
   function choiceAuthC() {
@@ -217,7 +214,7 @@ startGame = () => {
     document.getElementById("p3").style = "background-color: red";
     document.getElementById("p3").classList.add("dclass")
   }
-    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+  if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
       //go to the end page
       setTimeout(() => {
         document.getElementById("game").style.display = "none";
