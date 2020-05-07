@@ -124,7 +124,7 @@ startGame = () => {
       document.getElementById("p1").classList.add("dclass")
     }
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-      if (!acceptingAnswers) return;
+      // if (!acceptingAnswers) return;
       acceptingAnswers = false;
 
       //go to the end page
